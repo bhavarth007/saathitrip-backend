@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaathiTrip - Verified Travel Companion Platform</title>
+    <meta name="description" content="Find verified Indian travel companions. Every person you meet on this app is a verified real Indian citizen.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="navbar glass">
+            <div class="logo" id="logo-link" style="cursor: pointer;">
+                <span class="logo-icon">✨</span>
+                <h1>SaathiTrip</h1>
+            </div>
+            <div class="nav-actions" id="guest-nav">
+                <button class="btn btn-ghost" id="nav-login-btn">Log In</button>
+                <button class="btn btn-primary" id="nav-register-btn">Register</button>
+            </div>
+            <div class="nav-actions hidden" id="user-nav">
+                <span id="nav-user-greeting" style="margin-right: 15px; color: var(--text-color); font-weight: 500;"></span>
+                <button class="btn btn-ghost" id="nav-logout-btn">Logout</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero" id="hero-section">
+                <div class="hero-content">
+                    <div class="badge-wrapper">
+                        <span class="badge glass"><span class="dot"></span> Verified Platform</span>
+                    </div>
+                    <h2 class="hero-title">Travel Solo, <br><span class="text-gradient">Never Alone.</span></h2>
+                    <p class="hero-subtitle">Every person you meet on this app is a verified real traveler.</p>
+                    
+                    <div class="search-card glass">
+                        <div class="input-group">
+                            <label>Where to?</label>
+                            <input type="text" placeholder="e.g., Goa, Manali..." id="destination-input">
+                        </div>
+                        <div class="divider"></div>
+                        <div class="input-group">
+                            <label>When?</label>
+                            <input type="text" placeholder="Select Dates" id="dates-input">
+                        </div>
+                        <button class="btn btn-primary btn-large" id="find-companion-btn">Find Companions</button>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <!-- Decorative elements for hero -->
+                    <div class="orb orb-1"></div>
+                    <div class="orb orb-2"></div>
+                    <div class="glass-card mockup-card">
+                        <div class="user-profile">
+                            <div class="avatar bg-gradient"></div>
+                            <div class="user-info">
+                                <h4>Rahul Verma</h4>
+                                <span class="verified-tag">✓ Verified User</span>
+                            </div>
+                        </div>
+                        <p class="mockup-text">"Heading to Goa next week for the music festival! Looking for a group to join."</p>
+                        <div class="tags">
+                            <span class="tag">Music</span>
+                            <span class="tag">Adventure</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Registration Section -->
+            <section class="onboarding hidden" id="register-section">
+                <div class="glass-card onboarding-card">
+                    <h2>Create an Account</h2>
+                    <p class="text-muted">Register with your Email and Mobile number.</p>
+                    
+                    <div id="register-container">
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter Email" id="reg-email-input">
+                        </div>
+                        <div class="input-group mt-2">
+                            <input type="text" placeholder="Enter 10-digit Mobile" id="reg-mobile-input" maxlength="10">
+                        </div>
+                        <button class="btn btn-primary btn-large w-100 mt-2" id="reg-send-otp-btn">Send OTPs</button>
+                    </div>
+                    
+                    <div id="reg-otp-container" class="hidden mt-2">
+                        <p class="text-muted" style="font-size: 0.8rem;">OTPs sent to your email and mobile.</p>
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter Email OTP" id="reg-email-otp-input" maxlength="6">
+                        </div>
+                        <div class="input-group mt-2">
+                            <input type="text" placeholder="Enter Mobile OTP" id="reg-mobile-otp-input" maxlength="6">
+                        </div>
+                        <button class="btn btn-secondary btn-large w-100 mt-2" id="reg-verify-btn">Complete Registration</button>
+                    </div>
+                    
+                    <p class="mt-2 text-center" style="font-size: 0.9rem;">
+                        Already have an account? <a href="#" id="switch-to-login" style="color: var(--primary-color);">Log In</a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Login Section -->
+            <section class="onboarding hidden" id="login-section">
+                <div class="glass-card onboarding-card">
+                    <h2>Welcome Back</h2>
+                    <p class="text-muted">Login using EITHER your Email OR Mobile number.</p>
+                    
+                    <div id="login-container">
+                        <div class="input-group">
+                            <input type="text" placeholder="Email OR 10-digit Mobile" id="login-identifier-input">
+                        </div>
+                        <button class="btn btn-primary btn-large w-100 mt-2" id="login-send-otp-btn">Send Login OTP</button>
+                    </div>
+                    
+                    <div id="login-otp-container" class="hidden mt-2">
+                        <p class="text-muted" style="font-size: 0.8rem;">OTP sent successfully.</p>
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter 6-digit OTP" id="login-otp-input" maxlength="6">
+                        </div>
+                        <button class="btn btn-secondary btn-large w-100 mt-2" id="login-verify-btn">Log In</button>
+                    </div>
+                    
+                    <p class="mt-2 text-center" style="font-size: 0.9rem;">
+                        Don't have an account? <a href="#" id="switch-to-register" style="color: var(--primary-color);">Register Here</a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section class="dashboard hidden" id="dashboard-section">
+                <div class="dashboard-header">
+                    <h2>Available Companions</h2>
+                    <p class="text-muted" id="dashboard-subtitle">Showing matches for your search.</p>
+                </div>
+                
+                <div class="matches-grid" id="matches-grid">
+                    <!-- Matches will be injected here by JS -->
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features" id="features-section">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Why SaathiTrip?</h2>
+                <div class="features-grid">
+                    <div class="glass-card feature-card">
+                        <h3>🔒 Secure OTP Verification</h3>
+                        <p class="text-muted">Every user is verified via strict Email and Mobile OTP authentication for ultimate trust.</p>
+                    </div>
+                    <div class="glass-card feature-card">
+                        <h3>📍 Smart Matching</h3>
+                        <p class="text-muted">Enter your destination and dates. We connect you with verified travelers heading the same way.</p>
+                    </div>
+                    <div class="glass-card feature-card">
+                        <h3>💬 Dual-Consent Chat</h3>
+                        <p class="text-muted">No unsolicited messages. Both parties must consent before a chat can begin, ensuring safety.</p>
+                    </div>
+                    <div class="glass-card feature-card">
+                        <h3>🎒 Interest Profiling</h3>
+                        <p class="text-muted">Match based on travel style (adventure, luxury, backpacking) and interests for higher compatibility.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
