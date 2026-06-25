@@ -55,13 +55,15 @@ pending_otps = {}
 with app.app_context():
     db.create_all()
 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
 @app.route('/')
 def index():
-    return send_from_directory('.', 'index.html')
+    return send_from_directory(base_dir, 'index.html')
 
 @app.route('/<path:path>')
 def serve_static(path):
-    return send_from_directory('.', path)
+    return send_from_directory(base_dir, path)
 
 # --- Registration Routes ---
 @app.route('/api/register/send-otp', methods=['POST'])
